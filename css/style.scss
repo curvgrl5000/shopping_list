@@ -1,0 +1,448 @@
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.input_field {
+  display: block;
+  position: relative;
+  padding: 0 0 20px 0px;
+}
+
+
+input {
+background-color: white;
+  -webkit-rtl-ordering: logical;
+  -webkit-user-select: text;
+  cursor: auto;
+  padding: 10px;
+  border: 2px inset;
+  width: 20em;
+  height: 2.5em;
+  color: steelblue;
+  font-size: 20px;
+}
+
+input:focus{
+outline-color: #3AA1BF;
+    outline-style: auto;
+    outline-width: 5px;
+}
+
+
+/*Colors*/
+.pink {
+	color: #e06084;;
+}
+
+/* Main stuff */
+.text {
+  fill: none;
+  stroke-width: 6;
+  stroke-linejoin: round;
+  stroke-dasharray: 70 330;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke 6s infinite linear;
+  animation: stroke 6s infinite linear; }
+  .text:nth-child(5n + 1) {
+    stroke: #F2385A;
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.2s; }
+  .text:nth-child(5n + 2) {
+    stroke: #F5A503;
+    -webkit-animation-delay: -2.4s;
+    animation-delay: -2.4s; }
+  .text:nth-child(5n + 3) {
+    stroke: #E9F1DF;
+    -webkit-animation-delay: -3.6s;
+    animation-delay: -3.6s; }
+  .text:nth-child(5n + 4) {
+    stroke: #56D9CD;
+    -webkit-animation-delay: -4.8s;
+    animation-delay: -4.8s; }
+  .text:nth-child(5n + 5) {
+    stroke: #3aa1bf;
+    -webkit-animation-delay: -6s;
+    animation-delay: -6s; }
+
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400; } }
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400; } }
+
+
+body {
+	margin: 0px;
+	padding:0px;
+	background: gold -webkit-radial-gradient(gold, orangered);
+    	background: gold radial-gradient(gold, orangered);
+    	background-size: 100% 100%;
+}
+
+.container {
+	display: block;
+	margin: 30px;
+}
+
+.content {
+  font: 800 14.5em/1  'Open Sans', Helvetica;
+}
+
+h2, h3 {
+    font: 400 1em/1 'Open Sans', Helvetica;
+    color: white;
+    text-align: center;
+    letter-spacing: 1.4em;
+    margin: 2em auto 0px;
+    padding-left: 20px;
+}
+
+h2 {
+    position: relative;
+    font: 300 2.25em/1 'Open Sans', Helvetica;
+    color: #FF8DA2;
+    letter-spacing: normal;
+    text-align: left;
+    padding: .5em 0 1em 0;
+    margin-top: 0px;
+}
+
+svg {
+width: 50%;
+    margin: 0 auto 20px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.big_list {
+    max-width: 45em;
+    background-color: #475B8D;
+    padding: 1.5em 3em 3.5em 3em;
+    margin: 0 auto;
+    border-radius: 2em;
+    height: auto;
+    position: relative;
+    top: 10%;
+    -webkit-transform: translateY(5%);
+    -ms-transform: translateY(5%);
+    transform: translateY(5%);
+    box-shadow: #0F1010 5px 5px 30px;
+  }
+
+.shopping_list, .going_shopping {
+    margin: 0 auto;
+    width: 85%;
+}
+
+form.shopping_list {
+    width: 100%;
+}
+
+.shopping_list ul {
+	list-style: none;
+	padding: 20px 0px;
+}
+
+.shopping_list  li {
+    margin: 0 auto;
+    padding: 2em 0;
+    position: relative;
+}
+
+.ac-custom, .shopping_list {
+	padding: 0 0em;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.ac-custom ul, .shopping_list ul{
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+.ac-custom li, .shopping_list li {
+	margin: 0 auto;
+	padding: 1.25em 0;
+	position: relative;
+}
+
+.ac-custom label, .shopping_list label {
+	display: inline-block;
+	position: relative;
+	font-size: 1.5em;
+	padding: 0 0 0 65px;
+	vertical-align: top;
+	color: rgba(0, 0, 0, 0.53);
+	cursor: pointer;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.ac-custom input[type="checkbox"],
+.ac-custom input[type="radio"],
+.ac-custom label::before,
+.shopping_list input[type="checkbox"],
+.shopping_list input[type="radio"],
+.shopping_list label::before {
+	width: 35px;
+	height: 35px;
+	top: 50%;
+	left: 0;
+	margin-top: -20px;
+	position: absolute;
+	cursor: pointer;
+}
+
+.ac-custom input[type="checkbox"],
+.ac-custom input[type="radio"],
+.shopping_list input[type="checkbox"],
+.shopping_list input[type="radio"] {
+	opacity: 0;
+	-webkit-appearance: none;
+	display: inline-block;
+	vertical-align: middle;
+	z-index: 100;
+}
+
+.shopping_list label::before,
+.ac-custom label::before {
+	content: '';
+	border: 3px solid #fff;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+/*.ac-radio label::before {
+	border-radius: 50%;
+}*/
+
+.ac-custom input[type="checkbox"]:checked + label,
+.ac-custom input[type="radio"]:checked + label,
+.shopping_list input[type="checkbox"]:checked + label,
+.shopping_list input[type="radio"]:checked + label {
+	color: #fff;
+} 
+
+.ac-custom input[type="checkbox"]:checked + label::before,
+.ac-custom input[type="radio"]:checked + label::before,
+.shopping_list input[type="checkbox"]:checked + label::before,
+.shopping_list input[type="radio"]:checked + label::before,
+.shopping_list input[type="checkbox"]:checked + .little_button::before  {
+	opacity: 0.8;
+}
+
+/* General SVG and path styles */
+
+.ac-custom svg, .shopping_list svg {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 50%;
+	margin-top: -20px;
+	left: 5px;
+	pointer-events: none;
+}
+
+.ac-custom svg path, .shopping_list svg path {
+	stroke: #fdfcd3;
+	stroke-width: 13px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: none;
+}
+
+.ac-custom svg, .shopping_list svg {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    margin-top: -15px;
+    left: 5px;
+    pointer-events: none;
+}
+
+.ac-custom svg path, .shopping_list svg {
+  stroke: #ffff;
+  stroke-width: 13px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Buttons*/
+
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+.cbutton {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #B6C6D6;
+  font-size: 1.4em;
+  overflow: visible;
+  -webkit-transition: color 0.7s;
+  transition: color 0.7s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.cbutton.cbutton--click,
+.cbutton:focus {
+  outline: none;
+  color: #FF7B00;
+}
+
+.cbutton__icon {
+  display: block;
+}
+
+.cbutton__text {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cbutton::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -35px 0 0 -35px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+
+.cbutton--effect-jelena::after {
+  border: 2px solid rgba(111,148,182,0.5);
+}
+
+.cbutton--effect-jelena.cbutton--click::after {
+  -webkit-animation: anim-effect-jelena 0.3s ease-out forwards;
+  animation: anim-effect-jelena 0.3s ease-out forwards;
+}
+
+@-webkit-keyframes anim-effect-jelena {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.5, 0.5, 1);
+    transform: scale3d(0.5, 0.5, 1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.2, 1.2, 1);
+  }
+}
+
+@keyframes anim-effect-jelena {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.5, 0.5, 1);
+    transform: scale3d(0.5, 0.5, 1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.2, 1.2, 1);
+  }
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 70em) {
+
+svg {
+    width: 50%;
+    }
+}
+@media screen and (max-width: 45em) {
+	section {
+		font-size: 65%;
+	}
+      .big_list{
+            padding: 0.5em 1em 3.5em 1em;
+                -webkit-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    transform: translateY(0%);
+      }
+      input, select, textarea {
+      max-width: 80%;
+    padding: 0px 10px;
+    font-size: 18px;
+      }
+
+
+      input {
+            height: 2.25em;
+            margin-bottom: 10px;
+
+      }
+      .cbutton{
+        font-size: 2em;
+      }
+      .shopping_list label::before, .ac-custom label::before {
+            border: 3px solid #fff;
+      }
+      .shopping_list input[type="checkbox"], .shopping_list input[type="radio"] {
+            width: 30px;
+            height: 30px;
+      }
+      .shopping_list label {
+            padding: 10px 0 0 45px;
+      }
+      .shopping_list input[type="checkbox"], 
+      .shopping_list label::before {
+            width: 30px;
+            height: 30px;
+            top: 50%;
+            margin-top: -10px;
+      }
+
+      svg {
+    width: 65%;
+    margin: 0 auto 2px;
+    display: block;
+    text-transform: uppercase;
+}
+
+      .ac-custom svg, .shopping_list svg {
+        position: absolute;
+        width: 21px;
+        height: 21px;
+        top: 50%;
+        margin-top: -6px;
+        left: 5px;
+        pointer-events: none
+    }
+
+}
+
