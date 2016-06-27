@@ -1,6 +1,16 @@
+/*Global Styling*/
+
 *, *:after, *:before {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding:0px;
+  background: gold -webkit-radial-gradient(gold, orangered);
+      background: gold radial-gradient(gold, orangered);
+      background-size: 100% 100%;
 }
 
 .input_field {
@@ -29,13 +39,40 @@ outline-color: #3AA1BF;
     outline-width: 5px;
 }
 
+.container {
+  display: block;
+  margin: 30px;
+}
+
+.content {
+  font: 800 14.5em/1  'Open Sans', Helvetica;
+}
+
+h2, h3 {
+    font: 400 1em/1 'Open Sans', Helvetica;
+    color: white;
+    text-align: center;
+    letter-spacing: 1.4em;
+    margin: 2em auto 0px;
+    padding-left: 20px;
+}
+
+h2 {
+    position: relative;
+    font: 300 2.25em/1 'Open Sans', Helvetica;
+    color: #FF8DA2;
+    letter-spacing: normal;
+    text-align: left;
+    padding: .5em 0 1em 0;
+    margin-top: 0px;
+}
 
 /*Colors*/
 .pink {
 	color: #e06084;;
 }
 
-/* Main stuff */
+/* FORM STYLING*/
 .text {
   fill: none;
   stroke-width: 6;
@@ -72,42 +109,6 @@ outline-color: #3AA1BF;
   100% {
     stroke-dashoffset: -400; } }
 
-
-body {
-	margin: 0px;
-	padding:0px;
-	background: gold -webkit-radial-gradient(gold, orangered);
-    	background: gold radial-gradient(gold, orangered);
-    	background-size: 100% 100%;
-}
-
-.container {
-	display: block;
-	margin: 30px;
-}
-
-.content {
-  font: 800 14.5em/1  'Open Sans', Helvetica;
-}
-
-h2, h3 {
-    font: 400 1em/1 'Open Sans', Helvetica;
-    color: white;
-    text-align: center;
-    letter-spacing: 1.4em;
-    margin: 2em auto 0px;
-    padding-left: 20px;
-}
-
-h2 {
-    position: relative;
-    font: 300 2.25em/1 'Open Sans', Helvetica;
-    color: #FF8DA2;
-    letter-spacing: normal;
-    text-align: left;
-    padding: .5em 0 1em 0;
-    margin-top: 0px;
-}
 
 svg {
 width: 50%;
@@ -151,26 +152,26 @@ form.shopping_list {
     position: relative;
 }
 
-.ac-custom, .shopping_list {
+.shopping_list {
 	padding: 0 0em;
 	max-width: 900px;
 	margin: 0 auto;
 }
 
-.ac-custom ul, .shopping_list ul{
+.shopping_list ul {
 	list-style: none;
 	padding: 0;
 	margin: 0 auto;
 	max-width: 800px;
 }
 
-.ac-custom li, .shopping_list li {
+.shopping_list li {
 	margin: 0 auto;
 	padding: 1.25em 0;
 	position: relative;
 }
 
-.ac-custom label, .shopping_list label {
+.shopping_list label {
 	display: inline-block;
 	position: relative;
 	font-size: 1.5em;
@@ -182,9 +183,6 @@ form.shopping_list {
 	transition: color 0.3s;
 }
 
-.ac-custom input[type="checkbox"],
-.ac-custom input[type="radio"],
-.ac-custom label::before,
 .shopping_list input[type="checkbox"],
 .shopping_list input[type="radio"],
 .shopping_list label::before {
@@ -197,8 +195,6 @@ form.shopping_list {
 	cursor: pointer;
 }
 
-.ac-custom input[type="checkbox"],
-.ac-custom input[type="radio"],
 .shopping_list input[type="checkbox"],
 .shopping_list input[type="radio"] {
 	opacity: 0;
@@ -208,27 +204,19 @@ form.shopping_list {
 	z-index: 100;
 }
 
-.shopping_list label::before,
-.ac-custom label::before {
+.shopping_list label::before {
 	content: '';
 	border: 3px solid #fff;
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
 }
 
-/*.ac-radio label::before {
-	border-radius: 50%;
-}*/
-
-.ac-custom input[type="checkbox"]:checked + label,
-.ac-custom input[type="radio"]:checked + label,
 .shopping_list input[type="checkbox"]:checked + label,
 .shopping_list input[type="radio"]:checked + label {
 	color: #fff;
+      text-decoration: line-through;
 } 
 
-.ac-custom input[type="checkbox"]:checked + label::before,
-.ac-custom input[type="radio"]:checked + label::before,
 .shopping_list input[type="checkbox"]:checked + label::before,
 .shopping_list input[type="radio"]:checked + label::before,
 .shopping_list input[type="checkbox"]:checked + .little_button::before  {
@@ -236,8 +224,7 @@ form.shopping_list {
 }
 
 /* General SVG and path styles */
-
-.ac-custom svg, .shopping_list svg {
+ .shopping_list svg {
 	position: absolute;
 	width: 40px;
 	height: 40px;
@@ -247,7 +234,7 @@ form.shopping_list {
 	pointer-events: none;
 }
 
-.ac-custom svg path, .shopping_list svg path {
+.shopping_list svg path {
 	stroke: #fdfcd3;
 	stroke-width: 13px;
 	stroke-linecap: round;
@@ -255,7 +242,7 @@ form.shopping_list {
 	fill: none;
 }
 
-.ac-custom svg, .shopping_list svg {
+.shopping_list svg {
     position: absolute;
     width: 25px;
     height: 25px;
@@ -265,7 +252,7 @@ form.shopping_list {
     pointer-events: none;
 }
 
-.ac-custom svg path, .shopping_list svg {
+.shopping_list svg {
   stroke: #ffff;
   stroke-width: 13px;
   stroke-linecap: round;
@@ -273,21 +260,7 @@ form.shopping_list {
   fill: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /*Buttons*/
-
-
 .left {
   float: left;
 }
@@ -338,9 +311,6 @@ form.shopping_list {
   pointer-events: none;
 }
 
-
-
-
 .cbutton--effect-jelena::after {
   border: 2px solid rgba(111,148,182,0.5);
 }
@@ -384,57 +354,61 @@ svg {
     width: 50%;
     }
 }
+
 @media screen and (max-width: 45em) {
 	section {
 		font-size: 65%;
 	}
       .big_list{
-            padding: 0.5em 1em 3.5em 1em;
-                -webkit-transform: translateY(10%);
-    -ms-transform: translateY(10%);
-    transform: translateY(0%);
+        padding: 0.5em 1em 3.5em 1em;
+        -webkit-transform: translateY(10%);
+        -ms-transform: translateY(10%);
+        transform: translateY(0%);
       }
       input, select, textarea {
-      max-width: 80%;
-    padding: 0px 10px;
-    font-size: 18px;
+        max-width: 80%;
+        padding: 0px 10px;
+        font-size: 18px;
       }
-
 
       input {
-            height: 2.25em;
-            margin-bottom: 10px;
-
+        height: 2.25em;
+        margin-bottom: 10px;
       }
+
       .cbutton{
         font-size: 2em;
       }
-      .shopping_list label::before, .ac-custom label::before {
-            border: 3px solid #fff;
+
+      .shopping_list label::before {
+        border: 3px solid #fff;
       }
+      
       .shopping_list input[type="checkbox"], .shopping_list input[type="radio"] {
-            width: 30px;
-            height: 30px;
+        width: 30px;
+        height: 30px;
       }
+      
       .shopping_list label {
-            padding: 10px 0 0 45px;
+        padding: 10px 0 0 45px;
       }
+      
       .shopping_list input[type="checkbox"], 
       .shopping_list label::before {
-            width: 30px;
-            height: 30px;
-            top: 50%;
-            margin-top: -10px;
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        margin-top: -10px;
       }
 
       svg {
-    width: 65%;
-    margin: 0 auto 2px;
-    display: block;
-    text-transform: uppercase;
-}
+        width: 65%;
+        margin: 0 auto 2px;
+        display: block;
+        text-transform: uppercase;
+      }
 
-      .ac-custom svg, .shopping_list svg {
+      .shopping_list svg {
         position: absolute;
         width: 21px;
         height: 21px;
@@ -442,7 +416,6 @@ svg {
         margin-top: -6px;
         left: 5px;
         pointer-events: none
-    }
+      }
 
 }
-
