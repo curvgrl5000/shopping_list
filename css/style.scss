@@ -220,7 +220,7 @@ form.shopping_list {
 .shopping_list input[type="checkbox"]:checked + label::before,
 .shopping_list input[type="radio"]:checked + label::before,
 .shopping_list input[type="checkbox"]:checked + .little_button::before  {
-	opacity: 0.8;
+	opacity: 0.5;
 }
 
 /* General SVG and path styles */
