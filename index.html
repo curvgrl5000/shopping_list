@@ -5,7 +5,7 @@
 	<title>Shopping List App</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="fonts/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="css/style.scss">
+	<link rel="stylesheet" href="css/style.css">
 	<script src="js/modernizr.custom.js"></script>
 </head>
 	<body>
@@ -30,13 +30,14 @@
 				</div>
 				<section class="going_shopping">
 					<h2>Add an item to create your shopping list</h2>	
-					<div class="input_field">
-						<input type="text" name="My Shopping List" id="shopping_items">
-					 	<button class="cbutton cbutton--effect-jelena"><i class="cbutton__icon fa fa-fw fa-plus"></i>
-					 		<span class="cbutton__text">ADD</span>
-						</button>
-					</div>
+
 				 	<form class="shopping_list  ac-checkbox ac-cross" autocomplete="off">
+					 	<div class="input_field">
+							<input type="text" name="My Shopping List" id="shopping_items">
+						 	<button class="cbutton cbutton--effect-jelena" type="submit"><i class="cbutton__icon fa fa-fw fa-plus"></i>
+						 		<span class="cbutton__text">ADD</span>
+							</button>
+						</div>
 						<ul>
 							<li><input id="cb1" name="cb1" type="checkbox" ><label for="cb1">Milk</label>
 								<button class="cbutton cbutton--effect-jelena right"><i class="cbutton__icon fa fa-fw fa-trash-o"></i><span class="cbutton__text">delete</span>
@@ -63,10 +64,11 @@
 				</section>
 			</div>
 		</div>
+	<script src="js/jquery-2.2.3.js"></script>
 	<script src="js/svgcheckbx.js"></script>
 	<script src="js/shopping.js"></script>
 	<script src="js/classie.js"></script>
-		<script>
+	<script>
 			(function() {
 
 				// http://stackoverflow.com/a/11381730/989439
@@ -106,6 +108,8 @@
 				} );
 
 			})();
-		</script>
+	</script>
+
+
 	</body>
 </html>
