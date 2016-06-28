@@ -1,8 +1,6 @@
 $(document).ready(function() {
-
-      // var count = 0;
-      var count = $("li").length;
-  $(".shopping_list").on("click", ".cbutton", function( event ) {
+  var count = $("li").length + 1;
+  $(".shopping_list").on("click", ".cb_add", function( event ) {
     event.preventDefault();
     var addItem = $("input#shopping_items").val();
 
@@ -16,8 +14,6 @@ $(document).ready(function() {
         alert("Please add an Item!");
       };
   });
-
-
 });
 
 
