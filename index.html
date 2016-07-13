@@ -40,33 +40,31 @@
 						</div>
 						<ul class="listed_items">
 							<li><input id="cb1" name="cb1" type="checkbox" ><label for="cb1">Milk</label>
-								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem()"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
+								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne('cb1')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
 							</li>
 							<li><input id="cb2" name="cb2" type="checkbox" ><label for="cb2">Trash bags</label>    
-								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem()"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
+								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne('cb2')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
 							</li>
 							<li><input id="cb3" name="cb3" type="checkbox" ><label for="cb3">Water</label> 
-								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem()"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
+								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne('cb3')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
 							</li>
 							<li><input id="cb4" name="cb4" type="checkbox" ><label for="cb4">Something</label>
-								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem()"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
+								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne('cb4')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
 							</li>
 							<li><input id="cb5" name="cb5" type="checkbox" ><label for="cb5">Cleaner</label>
-								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem()"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
+								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne('cb5')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
 							</li>
 						</ul>
 					</form>
-
 
 					<form class="shopping_list">
 						<button type="button" onclick="jAdd()">jQuery add</button>
 						<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem()"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
 						<ul id="listed_itemss">
-		 					<li><input type="checkbox" /> item</li>
+		 					<li class= "testing"><input type="checkbox" /><label>item</label></li>
 		 				</ul>
 					</form>
-
-
+					
 				</section>
 			</div>
 		</div>
