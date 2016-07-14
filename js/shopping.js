@@ -11,7 +11,7 @@ $(document).ready(function() {
                +addItem+ '</label><button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne(\'cb' + count + ' \')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button></li> ' );
         count++;
         $(this).parent().children("input").val("");
-        //dynamicAnimation(); 
+        dynamicAnimation(); 
       } else {
         alert("Please add an Item!");
       }
@@ -36,12 +36,12 @@ function jRemOne(current_count) {
 ////////////////////////////////////////////////////////////////////
 
 // A SIMPLER WAY for test case button
-function jAdd() {
+function jAddd() {
     $('#listed_itemss').append('<li class="test"><input type=\"checkbox\" /><label> item</label><button class=\"cbutton cbutton--effect-jelena right\" type=\"button\" onclick=\"jRemOne()\"><i class=\"cbutton__icon fa fa-fw fa-trash-o\"></i></button></li></li>');
 }
 
 //REMOVE ALL OF THE LISTED ITEMS for test case button
-function jRem() {
+function jRemm() {
     $('#listed_itemss').children().filter(function () {
         return this.firstChild.checked;
     }).remove();
