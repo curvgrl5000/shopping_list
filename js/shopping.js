@@ -11,7 +11,7 @@ $(document).ready(function() {
                +addItem+ '</label><button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne(\'cb' + count + ' \')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button></li> ' );
         count++;
         $(this).parent().children("input").val("");
-        dynamicAnimation(); 
+        //dynamicAnimation(); 
       } else {
         alert("Please add an Item!");
       }

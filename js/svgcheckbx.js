@@ -66,6 +66,15 @@ if ( document.createElement('svg').getAttributeNS ) {
 	}
 
 	function dynamicAnimation() {
+		 checkbxsCross = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-cross input[type="checkbox"]' ) );
+	 	radiobxsFill = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-fill input[type="radio"]' ) );
+	 	checkbxsCheckmark = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-checkmark input[type="checkbox"]' ) );
+	 	radiobxsCircle = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-circle input[type="radio"]' ) );
+	 	checkbxsBoxfill = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-boxfill input[type="checkbox"]' ) );
+	 	radiobxsSwirl = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-swirl input[type="radio"]' ) );
+	 	checkbxsDiagonal = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-diagonal input[type="checkbox"]' ) );
+	 	checkbxsList = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-list input[type="checkbox"]' ) );
+
 		checkbxsCross.forEach( function( el, i ) { controlCheckbox( el, 'cross' ); } );
 		radiobxsFill.forEach( function( el, i ) { controlRadiobox( el, 'fill' ); } );
 		checkbxsCheckmark.forEach( function( el, i ) { controlCheckbox( el, 'checkmark' ); } );
