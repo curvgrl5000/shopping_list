@@ -66,6 +66,17 @@ h2 {
     margin-top: 0px;
 }
 
+h4.deleted_items {
+    display: inline-block;
+    position: relative;
+    font-size: 1.25em;
+    padding: 0px;
+    vertical-align: top;
+    line-height: 0em;
+    margin: 14px 0px;
+}
+
+
 /*Colors*/
 .pink {
 	color: #e06084;;

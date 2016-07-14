@@ -7,8 +7,8 @@ $(document).ready(function() {
 
      if  ( addItem != "" ) {
         $(".listed_items").append(
-               '<li><input id=\"cb'+count+ '"name=\"cb'+count+ '"type=\"checkbox\" ><label for=\"cb'+count+ '">' 
-               +addItem+ '</label><button class=\"cbutton cbutton--effect-jelena right\" type=\"button\" onclick=\"jRemOne(\'cb\')'+ count+ '\"><i class=\"cbutton__icon fa fa-fw fa-trash-o\"></i></button></li>');
+               '<li><input id="cb' + count + '"  name="cb' + count + '" type="checkbox"><label for= "cb' + count + '" >' 
+               +addItem+ '</label><button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne(\'cb' + count + ' \')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button></li> ' );
         count++;
         $(this).parent().children("input").val(""); 
       } else {
@@ -16,18 +16,6 @@ $(document).ready(function() {
       }
   });
 });
-
-// A SIMPLER WAY
-function jAdd() {
-    $('#listed_itemss').append('<li class="test"><input type=\"checkbox\" /> item</label><button class=\"cbutton cbutton--effect-jelena right\" type=\"button\" onclick=\"jRemOne()\"><i class=\"cbutton__icon fa fa-fw fa-trash-o\"></i></button></li></li>');
-}
-
-//REMOVE ALL OF THE LISTED ITEMS
-function jRem() {
-    $('#listed_itemss').children().filter(function () {
-        return this.firstChild.checked;
-    }).remove();
-}
 
 // REMOVE ALL OF THE LISTED ITEMS
 function jRem() {
@@ -43,4 +31,20 @@ function jRemOne(current_count) {
   }
   console.log($(this));  
 }
+
+////////////////////////////////////////////////////////////////////
+
+// A SIMPLER WAY for test case button
+function jAdd() {
+    $('#listed_itemss').append('<li class="test"><input type=\"checkbox\" /><label> item</label><button class=\"cbutton cbutton--effect-jelena right\" type=\"button\" onclick=\"jRemOne()\"><i class=\"cbutton__icon fa fa-fw fa-trash-o\"></i></button></li></li>');
+}
+
+//REMOVE ALL OF THE LISTED ITEMS for test case button
+function jRem() {
+    $('#listed_itemss').children().filter(function () {
+        return this.firstChild.checked;
+    }).remove();
+}
+
+
 
