@@ -10,7 +10,8 @@ $(document).ready(function() {
                '<li><input id="cb' + count + '"  name="cb' + count + '" type="checkbox"><label for= "cb' + count + '" >' 
                +addItem+ '</label><button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne(\'cb' + count + ' \')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button></li> ' );
         count++;
-        $(this).parent().children("input").val(""); 
+        $(this).parent().children("input").val("");
+        dynamicAnimation(); 
       } else {
         alert("Please add an Item!");
       }

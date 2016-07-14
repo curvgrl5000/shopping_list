@@ -65,14 +65,16 @@ if ( document.createElement('svg').getAttributeNS ) {
 		} );
 	}
 
-	checkbxsCross.forEach( function( el, i ) { controlCheckbox( el, 'cross' ); } );
-	radiobxsFill.forEach( function( el, i ) { controlRadiobox( el, 'fill' ); } );
-	checkbxsCheckmark.forEach( function( el, i ) { controlCheckbox( el, 'checkmark' ); } );
-	radiobxsCircle.forEach( function( el, i ) { controlRadiobox( el, 'circle' ); } );
-	checkbxsBoxfill.forEach( function( el, i ) { controlCheckbox( el, 'boxfill' ); } );
-	radiobxsSwirl.forEach( function( el, i ) { controlRadiobox( el, 'swirl' ); } );
-	checkbxsDiagonal.forEach( function( el, i ) { controlCheckbox( el, 'diagonal' ); } );
-	checkbxsList.forEach( function( el ) { controlCheckbox( el, 'list', { viewBox : '0 0 300 100', preserveAspectRatio : 'none' } ); } );
+	function dynamicAnimation() {
+		checkbxsCross.forEach( function( el, i ) { controlCheckbox( el, 'cross' ); } );
+		radiobxsFill.forEach( function( el, i ) { controlRadiobox( el, 'fill' ); } );
+		checkbxsCheckmark.forEach( function( el, i ) { controlCheckbox( el, 'checkmark' ); } );
+		radiobxsCircle.forEach( function( el, i ) { controlRadiobox( el, 'circle' ); } );
+		checkbxsBoxfill.forEach( function( el, i ) { controlCheckbox( el, 'boxfill' ); } );
+		radiobxsSwirl.forEach( function( el, i ) { controlRadiobox( el, 'swirl' ); } );
+		checkbxsDiagonal.forEach( function( el, i ) { controlCheckbox( el, 'diagonal' ); } );
+		checkbxsList.forEach( function( el ) { controlCheckbox( el, 'list', { viewBox : '0 0 300 100', preserveAspectRatio : 'none' } ); } );
+ 	}
 
 	function draw( el, type ) {
 		var paths = [], pathDef, 
@@ -133,5 +135,5 @@ if ( document.createElement('svg').getAttributeNS ) {
 			}
 		} );
 	}
-
+	dynamicAnimation();
 }
