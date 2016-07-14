@@ -1,5 +1,6 @@
 $(document).ready(function() {
-
+  
+  // ADD AN ITEM DYNAMICALLY
   $(".shopping_list").on("click", ".cb_add", function( event ) {
     event.preventDefault();
     var count = $("li").length + 1;
