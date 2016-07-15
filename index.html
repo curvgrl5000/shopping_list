@@ -48,10 +48,10 @@
 							<li><input id="cb3" name="cb3" type="checkbox" ><label for="cb3">Water</label> 
 								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne('cb3')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
 							</li>
-							<li><input id="cb4" name="cb4" type="checkbox" ><label for="cb4">Something</label>
+							<li><input id="cb4" name="cb4" type="checkbox" ><label for="cb4">Liquid Soap</label>
 								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne('cb4')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
 							</li>
-							<li><input id="cb5" name="cb5" type="checkbox" ><label for="cb5">Cleaner</label>
+							<li><input id="cb5" name="cb5" type="checkbox" ><label for="cb5">Hair Stuff</label>
 								<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne('cb5')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
 							</li>
 						</ul>
@@ -59,6 +59,11 @@
 							<h4 class="deleted_items">Delete All Items Completed</h4>
 							<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem()"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button>
 						</div>
+						<button type="button" onclick="completedTasks()"></button>
+						<ul id="completed"></ul>
+
+
+
 					</form>
 				</section>
 			</div>
