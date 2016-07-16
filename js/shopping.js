@@ -1,27 +1,41 @@
 var createShoppingItem = (function($) {
-    var $listed_items = $(".listed_items")
-    return function(count, addItem) {
-      var list_item= $('<li><input id="cb' + count + '"  name="cb' + count + '" type="checkbox"><label for= "cb' + count + '" >' 
-       +addItem+ '</label><button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne(\'cb' + count + ' \')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button></li> ' );
-      $listed_items.append(list_item)
-}
+    var $listed_items = $(".listed_items");
+    var count = 5;
+    function uid() {
+        ++count;
+    }
+    var $list_item = $('<li><input type="checkbox"><label>'
+      + '</label><button class="cbutton cbutton--effect-jelena right" type="button"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button></li> ' );
+
+    return function(addItem) {
+      var id = uid(),
+          $current_item = $list_item.clone();
+
+      $current_item.find('input').prop('id', 'cb' + id);
+      $current_item.find('label').prop('for', 'cb' + id);
+      $current_item.find('label').text(addItem);
+
+      $current_item.find('button').on('click', function () {
+        jRemOne($current_item);
+      });
+      $listed_items.append($current_item)
+    }
 
 })($); // immediate function
 
 $(document).ready(function() {
+  ['Milk','Cheese'].forEach(createShoppingItem);
   // ADD AN ITEM DYNAMICALLY
   $(".shopping_list").on("click", ".cb_add", function( event ) {
     event.preventDefault();
-    var count = $("li").length + 1;
     var addItem = $("input#shopping_items").val();
-     if  ( addItem != "" ) {
-        createShoppingItem(count, addItem);
-        count++;
-        $(this).parent().children("input").val("");
-        dynamicAnimation();
-      } else {
-        alert("Please add an Item!");
-      }
+    if ( addItem != "" ) {
+      createShoppingItem(addItem);
+      $(this).parent().children("input").val("");
+      dynamicAnimation();
+    } else {
+      alert("Please add an Item!");
+    }
   });
 });
 
@@ -33,11 +47,10 @@ function jRem() {
 }
 
 // REMOVE ONE OF THE LISTED ITEMS
-function jRemOne(current_count) {
-  if  ($('#'+ current_count).is( ':checked' ))  {
-    $('#'+ current_count).closest('li').remove();
+function jRemOne(item) {
+  if  ($('input[type=checkbox]',item).is( ':checked' ))  {
+    item.remove();
   }
-  console.log($(this));  
 }
 
 // ADD THE LOCALLY STORED ITEMS TO A LIST
