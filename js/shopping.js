@@ -1,19 +1,24 @@
+var createShoppingItem = (function($) {
+    var $listed_items = $(".listed_items")
+    return function(count, addItem) {
+      var list_item= $('<li><input id="cb' + count + '"  name="cb' + count + '" type="checkbox"><label for= "cb' + count + '" >' 
+       +addItem+ '</label><button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne(\'cb' + count + ' \')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button></li> ' );
+      $listed_items.append(list_item)
+}
+
+})($); // immediate function
+
 $(document).ready(function() {
-  
   // ADD AN ITEM DYNAMICALLY
   $(".shopping_list").on("click", ".cb_add", function( event ) {
     event.preventDefault();
     var count = $("li").length + 1;
     var addItem = $("input#shopping_items").val();
-
      if  ( addItem != "" ) {
-        $(".listed_items").append(
-               '<li><input id="cb' + count + '"  name="cb' + count + '" type="checkbox"><label for= "cb' + count + '" >' 
-               +addItem+ '</label><button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRemOne(\'cb' + count + ' \')"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button></li> ' );
+        createShoppingItem(count, addItem);
         count++;
         $(this).parent().children("input").val("");
         dynamicAnimation();
-       // localStorage.setItem(addItem);
       } else {
         alert("Please add an Item!");
       }
@@ -35,6 +40,7 @@ function jRemOne(current_count) {
   console.log($(this));  
 }
 
+// ADD THE LOCALLY STORED ITEMS TO A LIST
 function completedTasks() {
   var addItem = $("input#shopping_items").val();
   var id = $("#cb")
@@ -88,9 +94,6 @@ if (storageAvailable('sessionStorage')) {
 else {
   console.log("Too bad, no localStorage for us")
 }
-
-////////////////////////////////////////////////////////////////////
-// TESTING IF STORAGE HAS BEEN POPULATED
 
 
 
