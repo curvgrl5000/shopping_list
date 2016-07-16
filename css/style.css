@@ -40,7 +40,7 @@ outline-color: #3AA1BF;
 
 .container {
   display: block;
-  margin: 30px;
+  margin: 15px;
 }
 
 .content {
@@ -58,7 +58,7 @@ h2, h3 {
 
 h2 {
     position: relative;
-    font: 300 2.25em/1 'Open Sans', Helvetica;
+    font: 300 1.5em/1 'Open Sans', Helvetica;
     color: #FF8DA2;
     letter-spacing: normal;
     text-align: left;
@@ -69,11 +69,14 @@ h2 {
 h4.deleted_items {
     display: inline-block;
     position: relative;
-    font-size: 1.25em;
+    font-size: 1em;
     padding: 0px;
     vertical-align: top;
     line-height: 0em;
     margin: 14px 0px;
+    font-weight: 300;
+    color: #fff;
+    opacity: .8;
 }
 
 
@@ -83,7 +86,7 @@ h4.deleted_items {
 }
 
 .big_list {
-    max-width: 45em;
+    max-width: 38em;
     background-color: #475B8D;
     padding: 1.5em 3em 3.5em 3em;
     margin: 0 auto;
@@ -95,6 +98,15 @@ h4.deleted_items {
     -ms-transform: translateY(5%);
     transform: translateY(5%);
     box-shadow: #0F1010 5px 5px 30px;
+  }
+
+  .fancy_borders {
+    margin: 1em 0px 1em 0px;
+    border-top-style: ridge;
+    border-top: 2px solid #F5A503;
+    border-bottom-style: ridge;
+    border-bottom: 2px solid #F5A503;
+    padding: 10px 0px 10px 0px;
   }
 
 
@@ -137,7 +149,7 @@ h4.deleted_items {
 
 svg {
 width: 50%;
-    margin: 0 auto 20px;
+    margin: 0 auto 0px;
     display: block;
     text-transform: uppercase;
 }
@@ -168,7 +180,7 @@ form.shopping_list {
 	list-style: none;
 	padding: 0;
 	margin: 0 auto;
-	max-width: 800px;
+	max-width: 100%;
 }
 
 .shopping_list li {
@@ -361,8 +373,15 @@ svg {
     }
 }
 
-@media screen and (max-width: 45em) {
-	section {
+@media screen and (max-width: 40em) {
+	.container {
+        display: block;
+        margin: 40px;
+      }
+      h2 {
+        font: 300 1.75em/1.5'Open Sans', Helvetica;
+      }
+      section {
 		font-size: 65%;
 	}
       .big_list{
@@ -407,13 +426,6 @@ svg {
         margin-top: -10px;
       }
 
-      svg {
-        width: 65%;
-        margin: 0 auto 2px;
-        display: block;
-        text-transform: uppercase;
-      }
-
       .shopping_list svg {
         position: absolute;
         width: 21px;
@@ -423,5 +435,28 @@ svg {
         left: 5px;
         pointer-events: none
       }
-
 }
+  @media screen and (max-width: 30em) {
+
+      svg {
+        width: 65%;
+        margin: 0 auto 0px;
+        display: block;
+        text-transform: uppercase;
+      }
+      h2 {
+        font: 300 1.5em/1.5'Open Sans', Helvetica;
+      }
+      h3 {
+        letter-spacing: 1em;
+      }
+      .big_list {
+        padding: 0.5em 1em 3.5em 1em;
+      }
+}
+
+
+
+
+
+

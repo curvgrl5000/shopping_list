@@ -42,12 +42,15 @@ function jRemOne(current_count) {
 
 // ADD THE LOCALLY STORED ITEMS TO A LIST
 function completedTasks() {
+  var allItems = [];
+  var completedTasks = [];
+
   var addItem = $("input#shopping_items").val();
-  var id = $("#cb")
+  var id = $("#cb");
   localStorage.setItem(id, addItem);
   var value = localStorage.getItem(id, addItem);
   $("#completed").append(
-    '<li> Great job, you got ' + value + ' done!</li>'
+    '<li>' + value + '</li>'
     );
 }
 
