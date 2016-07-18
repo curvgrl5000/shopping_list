@@ -18,21 +18,21 @@ var createShoppingItem = (function($) {
       $current_item.find('button').on('click', function () {
         jRemOne($current_item);
       });
-      $listed_items.append($current_item)
+      $listed_items.append($current_item);
+      dynamicAnimation();
     }
 
 })($); // immediate function
 
 $(document).ready(function() {
-  ['Milk','Cheese'].forEach(createShoppingItem);
+  ['Milk','Trash Bag', 'Water', 'Liquid', 'Hair Stuff'].forEach(createShoppingItem);
   // ADD AN ITEM DYNAMICALLY
   $(".shopping_list").on("click", ".cb_add", function( event ) {
     event.preventDefault();
     var addItem = $("input#shopping_items").val();
-    if ( addItem != "" ) {
+    if ( addItem !== "" ) {
       createShoppingItem(addItem);
       $(this).parent().children("input").val("");
-      dynamicAnimation();
     } else {
       alert("Please add an Item!");
     }
