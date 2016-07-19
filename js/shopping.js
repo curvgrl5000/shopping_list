@@ -1,28 +1,48 @@
-var createShoppingItem = (function($) {
-    var $listed_items = $(".listed_items");
-    var count = 5;
+var shoppingList = (function($) {
+  var $item_list = {
+    todo: [],
+    done: []
+  },
+      $input_field;
+
+  $(function () {
+    $item_list.todo = $(".listed_items");
+    $item_list.done = $(".completed");
+    $input_field = $('.input_field').children("input");
+  });
+
+
+  var count = 5;
     function uid() {
         ++count;
     }
     var $list_item = $('<li><input type="checkbox"><label>'
       + '</label><button class="cbutton cbutton--effect-jelena right" type="button"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button></li> ' );
 
-    return function(addItem) {
-      var id = uid(),
-          $current_item = $list_item.clone();
+    return {
+      addItem: function(item_name) {
+        var id = uid(),
+            $current_item = $list_item.clone();
 
-      $current_item.find('input').prop('id', 'cb' + id);
-      $current_item.find('label').prop('for', 'cb' + id);
-      $current_item.find('label').text(addItem);
+        $current_item.find('input').prop('id', 'cb' + id);
+        $current_item.find('label').prop('for', 'cb' + id);
+        $current_item.find('label').text(item_name);
 
-      $current_item.find('button').on('click', function () {
-        jRemOne($current_item);
-      });
-      $listed_items.append($current_item);
-      dynamicAnimation();
+        $current_item.find('button').on('click', function () {
+          jRemOne($current_item);
+        });
+        $listed_items.append($current_item);
+        dynamicAnimation();
+        $input_field.val("");
+      },
+      move: function (item, from, to) {
+        $item_list[from]
+        $item_list[to];
+      }
     }
-
 })($); // immediate function
+
+$shopping_list.move($somejqueryelement, 'todo', 'done')
 
 $(document).ready(function() {
   ['Milk','Trash Bag', 'Water', 'Liquid', 'Hair Stuff'].forEach(createShoppingItem);
@@ -30,12 +50,9 @@ $(document).ready(function() {
   $(".shopping_list").on("click", ".cb_add", function( event ) {
     event.preventDefault();
     var addItem = $("input#shopping_items").val();
-    if ( addItem !== "" ) {
-      createShoppingItem(addItem);
-      $(this).parent().children("input").val("");
-    } else {
-      alert("Please add an Item!");
-    }
+
+    addItem === "" ? alert("Please add an Item!") : shoppingList.addItem(addItem);
+
   });
 });
 
