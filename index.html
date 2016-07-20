@@ -38,13 +38,13 @@
 						 		<span class="cbutton__text">ADD</span>
 							</button>
 						</div>
-						<ul class="listed_items">
+						<ul id="listed_items">
 
 						</ul>
 						<div class="fancy_border">
 							<h4 class="deleted_items">Delete All Items Selected</h4>
-							<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem()">
-								<span class="tooltip" title="kills them, doesn't save them!"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></span></button>
+							<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem('listed_items')">
+								<span class="tooltip" title="kills items, doesn't save them!"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></span></button>
 						</div>
 						<div class="fancy_border">
 							<h2>What You Got Done:</h2>
@@ -55,7 +55,7 @@
 
 						<div class="fancy_borders">
 							<h4 class="deleted_items">Delete All Items Completed</h4>
-							<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem()">
+							<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem('completed')">
 								<span class="tooltip" title="resets list!"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></span></button>
 						</div>
 					</form>

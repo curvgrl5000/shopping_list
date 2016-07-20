@@ -6,7 +6,7 @@ var shoppingList = (function($) {
     $input_field;
 
   $(function () {
-    $item_list.todo = $(".listed_items");
+    $item_list.todo = $("#listed_items");
     $item_list.done = $("#completed");
     $input_field = $('.input_field').children("input");
   });
@@ -29,7 +29,13 @@ var shoppingList = (function($) {
 
         $current_item.find('button').on('click', function () {
           if  ($('input[type=checkbox]',$current_item).is( ':checked' ))  {  
-            $current_item.appendTo($item_list.done);   //appendTo implicitly removes the DOm Object from its current place; 
+            $current_item.appendTo($item_list.done);   //appendTo implicitly removes the DOm Object from its current place;
+              $current_item.addClass('done'); 
+              $current_item.find('svg').remove();
+              $current_item.find('i').removeClass('fa-check').addClass('fa-trash-o');
+              $current_item.find('button').off('click').on('click' , function(){
+                $current_item.remove();
+              })
           }
         });
         return $current_item;
@@ -62,46 +68,7 @@ $(document).ready(function() {
 });
 
 // REMOVE ALL OF THE LISTED ITEMS
-function jRem() {
-    $('.listed_items > li').has(":checked").remove(); 
+function jRem(name) {
+    $('#' + name + " > li").has(":checked").remove(); 
 }
-
-// REMOVE ONE OF THE LISTED ITEMS //  A function call
-// function jRemOne(item) {
-//   if  ($('input[type=checkbox]',item).is( ':checked' ))  {
-//     item.remove();
-//   }
-// }
-
-////////////////////////////////////////////////////////////////////
-// LOCAL STORAGE TESTING
-// function storageAvailable(type) {
-//   try {
-//     var storage = window[type],
-//       x = '__storage_test__';
-//     storage.setItem(x, x);
-//     storage.removeItem(x);
-//     return true;
-//   }
-//   catch(e) {
-//     return false;
-//   }
-// }
-
-// if (storageAvailable('localStorage')) {
-//   console.log("Yippee! We can use localStorage awesomeness")
-// }
-// else {
-//   console.log("Too bad, no localStorage for us")
-// }
-
-
-// if (storageAvailable('sessionStorage')) {
-//   console.log("Yippee! We can use sessionStorage awesomeness")
-// }
-// else {
-//   console.log("Too bad, no localStorage for us")
-// }
-
-
 
