@@ -3,7 +3,7 @@ var shoppingList = (function($) {
     todo: [],
     done: []
   },
-      $input_field;
+    $input_field;
 
   $(function () {
     $item_list.todo = $(".listed_items");
@@ -11,17 +11,16 @@ var shoppingList = (function($) {
     $input_field = $('.input_field').children("input");
   });
 
-
-  var count = 5;
+  var count = 0;
     function uid() {
-        ++count;
+       return ++count;
     }
+
     var $list_item = $('<li><input type="checkbox"><label>'
       + '</label><button class="cbutton cbutton--effect-jelena right" type="button"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></button></li> ' );
-
-    return {
-      addItem: function(item_name) {
-        var id = uid(),
+    
+    function createItem(item_name) {
+      var id = uid(),
             $current_item = $list_item.clone();
 
         $current_item.find('input').prop('id', 'cb' + id);
@@ -30,27 +29,35 @@ var shoppingList = (function($) {
 
         $current_item.find('button').on('click', function () {
           jRemOne($current_item);
+          completedTasks($current_item);
         });
-        $listed_items.append($current_item);
+        return $current_item;
+    }
+
+    return {
+      addItem: function(item_name) {
+        $item_list.todo.append( createItem(item_name) );
         dynamicAnimation();
         $input_field.val("");
       },
-      move: function (item, from, to) {
+      move: function (item_name, from, to) {
         $item_list[from]
         $item_list[to];
       }
     }
+    shoppingList.move(item_name, 'todo', 'done');
+
 })($); // immediate function
 
-$shopping_list.move($somejqueryelement, 'todo', 'done')
+// shoppingList.move($("input#shopping_items").val(), 'todo', 'done');  Nic this worked too!!
 
 $(document).ready(function() {
-  ['Milk','Trash Bag', 'Water', 'Liquid', 'Hair Stuff'].forEach(createShoppingItem);
+  ['Milk','Trash Bag', 'Water', 'Liquid', 'Hair Stuff'].forEach(shoppingList.addItem);
+
   // ADD AN ITEM DYNAMICALLY
   $(".shopping_list").on("click", ".cb_add", function( event ) {
     event.preventDefault();
     var addItem = $("input#shopping_items").val();
-
     addItem === "" ? alert("Please add an Item!") : shoppingList.addItem(addItem);
 
   });
@@ -70,18 +77,19 @@ function jRemOne(item) {
   }
 }
 
-// ADD THE LOCALLY STORED ITEMS TO A LIST
-function completedTasks() {
-  var allItems = [];
-  var completedTasks = [];
-
-  var addItem = $("input#shopping_items").val();
-  var id = $("#cb");
-  localStorage.setItem(id, addItem);
-  var value = localStorage.getItem(id, addItem);
-  $("#completed").append(
-    '<li>' + value + '</li>'
+// ADD THE LOCALLY STORED ITEMS TO A DONE LIST
+function completedTasks(item) {
+  if  ($('input[type=checkbox]',item).is( ':checked' ))  {
+    var completedItem = shoppingList.done;
+    var id = $("#cb");
+    localStorage.setItem(id, completedItem);
+    var value = localStorage.getItem(id, completedItem);
+    $("#completed").append(
+      '<li class="done"><label>'+ value + '</label></li>'
     );
+  };
+  console.log(completedItem);
+
 }
 
 ////////////////////////////////////////////////////////////////////

@@ -100,6 +100,13 @@ h4.deleted_items {
     box-shadow: #0F1010 5px 5px 30px;
   }
 
+  .fancy_border {
+    margin: 1em 0px 1em 0px;
+    border-top-style: ridge;
+    border-top: 2px solid #F5A503;
+    padding: 10px 0px 0px 0px;
+  }
+
   .fancy_borders {
     margin: 1em 0px 1em 0px;
     border-top-style: ridge;
@@ -189,6 +196,11 @@ form.shopping_list {
 	position: relative;
 }
 
+.shopping_list li.done {
+    margin: 0 auto;
+    padding: 1.9mm 0;
+}
+
 .shopping_list label {
 	display: inline-block;
 	position: relative;
@@ -240,6 +252,33 @@ form.shopping_list {
 	opacity: 0.5;
 }
 
+.shopping_list li.done label {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5em;
+  padding: 0 0 0 65px;
+  vertical-align: top;
+  color: rgba(0, 0, 0, 0.53);
+  cursor: none;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  text-decoration: line-through;
+  color: white;
+}
+
+.shopping_list li.done label::before {
+    border: 3px solid #FF8B00; /*#FF8DA2;*/
+    width: 12px;
+    height: 12px;
+    top: 25%;
+    left: 13px;
+    margin-top: 0px;
+    position: absolute;
+    border-radius: 12px;
+    background-color: #FF8DA2;
+    cursor: none;
+}
+
 /* General SVG and path styles */
  .shopping_list svg {
 	position: absolute;
@@ -277,6 +316,51 @@ form.shopping_list {
   stroke-linejoin: round;
   fill: none;
 }
+
+
+.tooltip {
+    display: inline;
+    position: relative;
+}
+
+.tooltip:hover {
+    color: #F5A503;
+    text-decoration: none;
+}
+
+.tooltip:hover:after {
+    background: #2C4076;
+    background: rgb(37, 48, 77);
+    border-radius: .5em;
+    bottom: 1.65em;
+    color: #fff;
+    content: attr(title);
+    display: block;
+    left: -1em;
+    padding: .3em .75em;
+    position: absolute;
+    text-shadow: 0 1px 0 #000;
+    white-space: nowrap;
+    z-index: 98;
+    font-size: .8em;
+}
+
+.tooltip:hover:before {
+   border: solid;
+    border-color: #111 transparent;
+    border-color: rgb(37, 48, 77) transparent;
+    border-width: .4em .4em 0 .4em;
+    bottom: 1em;
+    content: "";
+    display: block;
+    left: 1.55mm;
+    position: absolute;
+    z-index: 99;*/
+}
+
+
+
+
 
 /*Buttons*/
 .left {
