@@ -270,7 +270,6 @@ form.shopping_list {
   opacity: 1;
 }
 
-
 .shopping_list li.done label::before {
     border: 3px solid #FF8B00; /*#FF8DA2;*/
     width: 12px;

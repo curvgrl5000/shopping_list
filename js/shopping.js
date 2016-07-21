@@ -47,7 +47,7 @@ var shoppingList = (function($) {
         dynamicAnimation();
         $input_field.val("");
       },
-      move: function (item_name, from, to) {
+      move: function (item_name, from, to) { // this could be used in the future, not used just yet.
         $item_list[from]
         $item_list[to];
       }
