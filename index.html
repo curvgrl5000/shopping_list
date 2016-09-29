@@ -33,7 +33,7 @@
 
 				 	<form class="shopping_list  ac-checkbox ac-cross" autocomplete="off">
 					 	<div class="input_field">
-							<input type="text" name="items" id="shopping_items">
+							<input type="text" name="items" id="shopping_items" maxlength="15">
 						 	<button class="cbutton cb_add"  type="submit"><i class="cbutton__icon fa fa-fw fa-plus"></i>
 						 		<span class="cbutton__text">ADD</span>
 							</button>
@@ -43,7 +43,7 @@
 						<div class="fancy_border">
 							<h4 class="deleted_items">Delete All Items Selected</h4>
 							<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem('listed_items')">
-								<span class="tooltip" title="kills items, doesn't save them!"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></span></button>
+								<span class="tooltip" title="kills, doesn't save!"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></span></button>
 						</div>
 						<div class="fancy_border">
 							<h2>What You Got Done:</h2>
@@ -54,7 +54,7 @@
 						<div class="fancy_borders">
 							<h4 class="deleted_items">Delete All Items Completed</h4>
 							<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem('completed')">
-								<span class="tooltip" title="resets list!"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></span></button>
+								<span class="tooltip" title="reset list!"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></span></button>
 						</div>
 					</form>
 				</section>
