@@ -345,6 +345,7 @@ form.shopping_list {
 .tooltip:hover {
     color: #F5A503;
     text-decoration: none;
+    opacity: 1;
 }
 
 .tooltip:hover:after {
@@ -353,7 +354,7 @@ form.shopping_list {
     border-radius: .5em;
     bottom: 1.65em;
     color: #fff;
-    content: attr(title);
+    content: attr(data-tooltip);
     display: block;
     left: -5em;
     padding: .3em .75em;
@@ -398,12 +399,17 @@ form.shopping_list {
   -webkit-transition: color 0.7s;
   transition: color 0.7s;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  opacity: .5;
+}
+.cbutton:hover {
+  opacity: 1;
 }
 
 .cbutton.cbutton--click,
 .cbutton:focus {
   outline: none;
   color: #FF7B00;
+  opacity: 1;
 }
 
 .cbutton__icon {

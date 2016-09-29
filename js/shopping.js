@@ -31,20 +31,22 @@ var shoppingList = (function($) {
           if  ($('input[type=checkbox]',$current_item).is( ':checked' ))  {  
             $current_item.appendTo($item_list.done);   //appendTo implicitly removes the DOm Object from its current place;
               $current_item.addClass('done'); 
+              $current_item.find('i').addClass('brighter'); 
               $current_item.find('svg').remove();
               $current_item.find('i').removeClass('fa-check').addClass('fa-trash-o');
               $current_item.find('button').off('click').on('click' , function(){
-                $current_item.remove();
+              $current_item.remove();
               })
           }
         });
+        controlCheckbox($current_item.find('input')[0], "cross");
         return $current_item;
     }
 
     return {
       addItem: function(item_name) {
         $item_list.todo.append( createItem(item_name) );
-        dynamicAnimation();
+        // dynamicAnimation();
         $input_field.val("");
       },
       move: function (item_name, from, to) { // this could be used in the future, not used just yet.
