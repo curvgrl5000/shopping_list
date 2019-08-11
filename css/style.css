@@ -97,7 +97,14 @@ h4.deleted_items {
     -webkit-transform: translateY(5%);
     -ms-transform: translateY(5%);
     transform: translateY(5%);
-    box-shadow: #0F1010 5px 5px 30px;
+    box-shadow:  #3A1A08 5px 5px 30px;
+  }
+
+  .fancy_border {
+    margin: 1em 0px 1em 0px;
+    border-top-style: ridge;
+    border-top: 2px solid #F5A503;
+    padding: 10px 0px 0px 0px;
   }
 
   .fancy_borders {
@@ -113,32 +120,48 @@ h4.deleted_items {
 /* ==================ANIMATED CHARACTER STYLING==================*/
 .text {
   fill: none;
-  stroke-width: 6;
+  stroke-width: 6.5;
   stroke-linejoin: round;
   stroke-dasharray: 70 330;
   stroke-dashoffset: 0;
   -webkit-animation: stroke 6s infinite linear;
-  animation: stroke 6s infinite linear; }
+  animation: stroke 6s infinite linear; 
+  }
+  
+  /* COLORS EXPERIMENTS:
+  #F2385A   hotpink  #EC826D  or  #E95032
+  #F5A503   yellow    #FDC86F
+  #E9F1DF   white     #A5D9DC
+  #56D9CD   aqua     #65C9D3
+  #3aa1bf      blue      #1FAAAF
+  */
+
   .text:nth-child(5n + 1) {
-    stroke: #F2385A;
+    stroke: #E95032;
     -webkit-animation-delay: -1.2s;
-    animation-delay: -1.2s; }
+    animation-delay: -1.2s; 
+  }
   .text:nth-child(5n + 2) {
-    stroke: #F5A503;
+    stroke: #FDC86F;
     -webkit-animation-delay: -2.4s;
-    animation-delay: -2.4s; }
+    animation-delay: -2.4s; 
+  }
   .text:nth-child(5n + 3) {
-    stroke: #E9F1DF;
+    stroke: #A5D9DC;
     -webkit-animation-delay: -3.6s;
-    animation-delay: -3.6s; }
+    animation-delay: -3.6s; 
+  }
   .text:nth-child(5n + 4) {
-    stroke: #56D9CD;
+    stroke: #65C9D3;
     -webkit-animation-delay: -4.8s;
-    animation-delay: -4.8s; }
+    animation-delay: -4.8s; 
+  }
   .text:nth-child(5n + 5) {
-    stroke: #3aa1bf;
+    stroke: #1FAAAF;
     -webkit-animation-delay: -6s;
-    animation-delay: -6s; }
+    animation-delay: -6s; 
+  }
+
 
 @-webkit-keyframes stroke {
   100% {
@@ -148,8 +171,8 @@ h4.deleted_items {
     stroke-dashoffset: -400; } }
 
 svg {
-width: 50%;
-    margin: 0 auto 0px;
+    width: 50%;
+    margin: 0px auto 0px;
     display: block;
     text-transform: uppercase;
 }
@@ -187,6 +210,11 @@ form.shopping_list {
 	margin: 0 auto;
 	padding: 1.25em 0;
 	position: relative;
+}
+
+.shopping_list li.done {
+    margin: 0 auto;
+    padding: 1.9mm 0;
 }
 
 .shopping_list label {
@@ -240,6 +268,37 @@ form.shopping_list {
 	opacity: 0.5;
 }
 
+.shopping_list li.done label {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5em;
+  padding: 0 0 0 65px;
+  vertical-align: top;
+  color: rgba(0, 0, 0, 0.53);
+  cursor: none;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  text-decoration: line-through;
+  color: white;
+}
+
+.shopping_list li.done input[type="checkbox"]:checked + label::before {
+  opacity: 1;
+}
+
+.shopping_list li.done label::before {
+    border: 3px solid #FF8B00; /*#FF8DA2;*/
+    width: 12px;
+    height: 12px;
+    top: 25%;
+    left: 13px;
+    margin-top: 0px;
+    position: absolute;
+    border-radius: 12px;
+    background-color: #FF8DA2;
+    cursor: none;
+}
+
 /* General SVG and path styles */
  .shopping_list svg {
 	position: absolute;
@@ -278,10 +337,52 @@ form.shopping_list {
   fill: none;
 }
 
+.tooltip {
+    display: inline;
+    position: relative;
+}
+
+.tooltip:hover {
+    color: #F5A503;
+    text-decoration: none;
+    opacity: 1;
+}
+
+.tooltip:hover:after {
+    background: #2C4076;
+    background: rgb(37, 48, 77);
+    border-radius: .5em;
+    bottom: 1.65em;
+    color: #fff;
+    content: attr(data-tooltip);
+    display: block;
+    left: -5em;
+    padding: .3em .75em;
+    position: absolute;
+    text-shadow: 0 1px 0 #000;
+    white-space: nowrap;
+    z-index: 98;
+    font-size: .8em;
+}
+
+.tooltip:hover:before {
+   border: solid;
+    border-color: #111 transparent;
+    border-color: rgb(37, 48, 77) transparent;
+    border-width: .4em .4em 0 .4em;
+    bottom: 1em;
+    content: "";
+    display: block;
+    left: 1.55mm;
+    position: absolute;
+    z-index: 99;*/
+}
+
 /*Buttons*/
 .left {
   float: left;
 }
+
 .right {
   float: right;
 }
@@ -298,12 +399,17 @@ form.shopping_list {
   -webkit-transition: color 0.7s;
   transition: color 0.7s;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  opacity: .5;
+}
+.cbutton:hover {
+  opacity: 1;
 }
 
 .cbutton.cbutton--click,
 .cbutton:focus {
   outline: none;
   color: #FF7B00;
+  opacity: 1;
 }
 
 .cbutton__icon {
@@ -363,7 +469,6 @@ form.shopping_list {
     transform: scale3d(1.2, 1.2, 1);
   }
 }
-
 
 /* Media Queries */
 @media screen and (max-width: 70em) {
@@ -454,9 +559,4 @@ svg {
         padding: 0.5em 1em 3.5em 1em;
       }
 }
-
-
-
-
-
 
