@@ -82,7 +82,7 @@ function jRemAll() {
 }
 
 ////////////////////////////////////////////////////////////////////
-// LOCA STORAGE TESTING
+// LOCAL STORAGE TESTING
 function storageAvailable(type) {
   try {
     var storage = window[type],
