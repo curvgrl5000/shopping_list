@@ -223,7 +223,7 @@ form.shopping_list {
 	font-size: 1.5em;
 	padding: 0 0 0 65px;
 	vertical-align: top;
-	color: rgba(0, 0, 0, 0.53);
+	color: rgb(145, 151, 167);
 	cursor: pointer;
 	-webkit-transition: color 0.3s;
 	transition: color 0.3s;
