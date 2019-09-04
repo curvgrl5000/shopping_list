@@ -1,20 +1,18 @@
 /*  ==================Global Styling==================*/
 
 *, *:after, *:before {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0px;
   padding:0px;
-  background: gold -webkit-radial-gradient(gold, orangered);
-      background: gold radial-gradient(gold, orangered);
-      background-size: 100% 100%;
+  background: gold radial-gradient(gold, orangered);
+  background-size: 100% 100%;
 }
 
 .input_field {
-  display: block;
   position: relative;
   padding: 0 0 20px 0px;
 }
@@ -33,14 +31,13 @@ input {
   min-width: 15em;
 }
 
-input:focus{
-outline-color: #3AA1BF;
-    outline-style: auto;
-    outline-width: 5px;
+input:focus {
+  outline-color: #a5d9dc;
+  outline-style: auto;
+  outline-width: 5px;
 }
 
 .container {
-  display: block;
   margin: 15px;
 }
 
@@ -49,35 +46,33 @@ outline-color: #3AA1BF;
 }
 
 h2, h3 {
-    font: 400 1em/1 'Open Sans', Helvetica;
-    color: white;
-    text-align: center;
-    letter-spacing: 1.4em;
-    margin: 1em auto 0px;
-    padding-left: 20px;
+  font: 400 1em/1 'Open Sans', Helvetica;
+  color: white;
+  text-align: center;
+  letter-spacing: 1.4em;
+  margin: 1em auto 0px;
+  padding-left: 20px;
 }
 
 h2 {
-    position: relative;
-    font: 300 1.5em/1 'Open Sans', Helvetica;
-    color: #FF8DA2;
-    letter-spacing: normal;
-    text-align: left;
-    padding: .5em 0 1em 0;
-    margin-top: 0px;
+  font: 300 1.5em/1 'Open Sans', Helvetica;
+  color: #FF8DA2;
+  letter-spacing: normal;
+  text-align: left;
+  padding: .5em 0 1em 0;
+  margin-top: 0px;
 }
 
 h4.deleted_items {
-    display: inline-block;
-    position: relative;
-    font-size: 1em;
-    padding: 0px;
-    vertical-align: top;
-    line-height: 0em;
-    margin: 14px 0px;
-    font-weight: 300;
-    color: #fff;
-    opacity: .8;
+  display: inline-block;
+  font-size: 1em;
+  padding: 0px;
+  vertical-align: top;
+  line-height: 0em;
+  margin: 14px 0px;
+  font-weight: 300;
+  color: #fff;
+  opacity: .8;
 }
 
 
@@ -87,35 +82,31 @@ h4.deleted_items {
 }
 
 .big_list {
-    max-width: 33em;
-    background-color: #475B8D;
-    padding: 1.5em 3em 3.5em 3em;
-    margin: 0 auto;
-    border-radius: 2em;
-    height: auto;
-    position: relative;
-    top: 10%;
-    -webkit-transform: translateY(5%);
-    -ms-transform: translateY(5%);
-    transform: translateY(5%);
-    box-shadow:  #3A1A08 5px 5px 30px;
-  }
+  max-width: 33em;
+  background-color: #475B8D;
+  padding: 1.5em 3em 3.5em 3em;
+  margin: 0 auto;
+  border-radius: 2em;
+  height: auto;
+  top: 10%;
+  -webkit-transform: translateY(5%);
+  -ms-transform: translateY(5%);
+  transform: translateY(5%);
+  box-shadow: #3A1A08 5px 5px 30px;
+}
 
-  .fancy_border {
-    margin: 1em 0px 1em 0px;
-    border-top-style: ridge;
-    border-top: 2px solid #F5A503;
-    padding: 10px 0px 0px 0px;
-  }
+.fancy_borders, .fancy_border {
+  margin: 1em 0px 1em 0px;
+  border-top-style: ridge;
+  border-top: 2px solid #F5A503;
+  padding: 10px 0px 0px 0px;
+}
 
-  .fancy_borders {
-    margin: 1em 0px 1em 0px;
-    border-top-style: ridge;
-    border-top: 2px solid #F5A503;
-    border-bottom-style: ridge;
-    border-bottom: 2px solid #F5A503;
-    padding: 10px 0px 10px 0px;
-  }
+.fancy_borders {
+  border-bottom-style: ridge;
+  border-bottom: 2px solid #F5A503;
+  padding: 10px 0px 10px 0px;
+}
 
 
 /* ==================ANIMATED CHARACTER STYLING==================*/
@@ -127,76 +118,71 @@ h4.deleted_items {
   stroke-dashoffset: 0;
   -webkit-animation: stroke 6s infinite linear;
   animation: stroke 6s infinite linear; 
-  }
+}
   
-  /* COLORS EXPERIMENTS:
-  #F2385A   hotpink  #EC826D  or  #E95032
-  #F5A503   yellow    #FDC86F
-  #E9F1DF   white     #A5D9DC
-  #56D9CD   aqua     #65C9D3
-  #3aa1bf      blue      #1FAAAF
-  */
-
-  .text:nth-child(5n + 1) {
-    stroke: #E95032;
-    -webkit-animation-delay: -1.2s;
-    animation-delay: -1.2s; 
-  }
-  .text:nth-child(5n + 2) {
-    stroke: #FDC86F;
-    -webkit-animation-delay: -2.4s;
-    animation-delay: -2.4s; 
-  }
-  .text:nth-child(5n + 3) {
-    stroke: #A5D9DC;
-    -webkit-animation-delay: -3.6s;
-    animation-delay: -3.6s; 
-  }
-  .text:nth-child(5n + 4) {
-    stroke: #65C9D3;
-    -webkit-animation-delay: -4.8s;
-    animation-delay: -4.8s; 
-  }
-  .text:nth-child(5n + 5) {
-    stroke: #1FAAAF;
-    -webkit-animation-delay: -6s;
-    animation-delay: -6s; 
-  }
-
+.text:nth-child(5n + 1) {
+  stroke: #E95032;
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s; 
+}
+.text:nth-child(5n + 2) {
+  stroke: #FDC86F;
+  -webkit-animation-delay: -2.4s;
+  animation-delay: -2.4s; 
+}
+.text:nth-child(5n + 3) {
+  stroke: #A5D9DC;
+  -webkit-animation-delay: -3.6s;
+  animation-delay: -3.6s; 
+}
+.text:nth-child(5n + 4) {
+  stroke: #65C9D3;
+  -webkit-animation-delay: -4.8s;
+  animation-delay: -4.8s; 
+}
+.text:nth-child(5n + 5) {
+  stroke: #1FAAAF;
+  -webkit-animation-delay: -6s;
+  animation-delay: -6s; 
+}
 
 @-webkit-keyframes stroke {
   100% {
-    stroke-dashoffset: -400; } }
+    stroke-dashoffset: -400; 
+  } 
+}
 @keyframes stroke {
   100% {
-    stroke-dashoffset: -400; } }
+    stroke-dashoffset: -400; 
+  } 
+}
 
 svg {
-    width: 50%;
-    margin: 0px auto 0px;
-    display: block;
-    text-transform: uppercase;
+  width: 50%;
+  margin: 0px auto 0px;
+  display: block;
+  text-transform: uppercase;
 }
 
 
 /* ==================MAIN CONTENT STYLING==================*/
 
 .shopping_list, .going_shopping {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 
 /* ==================FORM STYLING==================*/
 
 form.shopping_list {
-    width: 100%;
+  width: 100%;
 }
 
 .shopping_list {
 	padding: 0 0em;
 	max-width: 900px;
 	margin: 0 auto;
-      width: 100%;
+  width: 100%;
 }
 
 .shopping_list ul {
@@ -213,8 +199,8 @@ form.shopping_list {
 }
 
 .shopping_list li.done {
-    margin: 0 auto;
-    padding: 1.9mm 0;
+  margin: 0 auto;
+  padding: 1.9mm 0;
 }
 
 .shopping_list label {
@@ -260,7 +246,7 @@ form.shopping_list {
 .shopping_list input[type="checkbox"]:checked + label,
 .shopping_list input[type="radio"]:checked + label {
 	color: #fff;
-      text-decoration: line-through;
+  text-decoration: line-through;
 } 
 
 .shopping_list input[type="checkbox"]:checked + label::before,
@@ -287,20 +273,20 @@ form.shopping_list {
 }
 
 .shopping_list li.done label::before {
-    border: 3px solid #FF8B00; /*#FF8DA2;*/
-    width: 12px;
-    height: 12px;
-    top: 25%;
-    left: 13px;
-    margin-top: 0px;
-    position: absolute;
-    border-radius: 12px;
-    background-color: #FF8DA2;
-    cursor: none;
+  border: 3px solid #FF8B00;
+  width: 12px;
+  height: 12px;
+  top: 25%;
+  left: 13px;
+  margin-top: 0px;
+  position: absolute;
+  border-radius: 12px;
+  background-color: #FF8DA2;
+  cursor: none;
 }
 
 /* General SVG and path styles */
- .shopping_list svg {
+.shopping_list svg {
 	position: absolute;
 	width: 40px;
 	height: 40px;
@@ -311,8 +297,7 @@ form.shopping_list {
 }
 
 .shopping_list svg path {
-	stroke: #fdfcd3;
-      stroke: #FF8B00;
+	stroke: #FF8B00;
 	stroke-width: 13px;
 	stroke-linecap: round;
 	stroke-linejoin: round;
@@ -320,13 +305,13 @@ form.shopping_list {
 }
 
 .shopping_list svg {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    top: 50%;
-    margin-top: -15px;
-    left: 5px;
-    pointer-events: none;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  margin-top: -15px;
+  left: 5px;
+  pointer-events: none;
 }
 
 .shopping_list svg {
@@ -338,44 +323,43 @@ form.shopping_list {
 }
 
 .tooltip {
-    display: inline;
-    position: relative;
+  display: inline;
+  position: relative;
 }
 
 .tooltip:hover {
-    color: #F5A503;
-    text-decoration: none;
-    opacity: 1;
+  color: #F5A503;
+  text-decoration: none;
+  opacity: 1;
 }
 
 .tooltip:hover:after {
-    background: #2C4076;
-    background: rgb(37, 48, 77);
-    border-radius: .5em;
-    bottom: 1.65em;
-    color: #fff;
-    content: attr(data-tooltip);
-    display: block;
-    left: -5em;
-    padding: .3em .75em;
-    position: absolute;
-    text-shadow: 0 1px 0 #000;
-    white-space: nowrap;
-    z-index: 98;
-    font-size: .8em;
+  background: #2C4076;
+  background: rgb(37, 48, 77);
+  border-radius: .5em;
+  bottom: 1.65em;
+  color: #fff;
+  content: attr(data-tooltip);
+  left: -5em;
+  padding: .3em .75em;
+  position: absolute;
+  text-shadow: 0 1px 0 #000;
+  white-space: nowrap;
+  z-index: 98;
+  font-size: .8em;
 }
 
 .tooltip:hover:before {
-   border: solid;
-    border-color: #111 transparent;
-    border-color: rgb(37, 48, 77) transparent;
-    border-width: .4em .4em 0 .4em;
-    bottom: 1em;
-    content: "";
-    display: block;
-    left: 1.55mm;
-    position: absolute;
-    z-index: 99;*/
+  border: solid;
+  border-color: #111 transparent;
+  border-color: rgb(37, 48, 77) transparent;
+  border-width: .4em .4em 0 .4em;
+  bottom: 1em;
+  content: "";
+  display: block;
+  left: 3.55mm;
+  position: absolute;
+  z-index: 99;
 }
 
 /*Buttons*/
@@ -480,83 +464,76 @@ svg {
 
 @media screen and (max-width: 40em) {
 	.container {
-        display: block;
         margin: 40px;
-      }
-      h2 {
-        font: 300 1.75em/1.5'Open Sans', Helvetica;
-      }
-      section {
+  }
+  h2 {
+    font: 300 1.75em/1.5'Open Sans', Helvetica;
+  }
+  section {
 		font-size: 65%;
 	}
-      .big_list{
-        padding: 0.5em 1em 3.5em 1em;
-        -webkit-transform: translateY(10%);
-        -ms-transform: translateY(10%);
-        transform: translateY(0%);
-      }
-      input, select, textarea {
-        max-width: 80%;
-        padding: 0px 10px;
-        font-size: 18px;
-      }
-
-      input {
-        height: 2.25em;
-        margin-bottom: 10px;
-      }
-
-      .cbutton{
-        font-size: 2em;
-      }
-
-      .shopping_list label::before {
-        border: 3px solid #fff;
-      }
-      
-      .shopping_list input[type="checkbox"], .shopping_list input[type="radio"] {
-        width: 30px;
-        height: 30px;
-      }
-      
-      .shopping_list label {
-        padding: 10px 0 0 45px;
-      }
-      
-      .shopping_list input[type="checkbox"], 
-      .shopping_list label::before {
-        width: 30px;
-        height: 30px;
-        top: 50%;
-        margin-top: -10px;
-      }
-
-      .shopping_list svg {
-        position: absolute;
-        width: 21px;
-        height: 21px;
-        top: 50%;
-        margin-top: -6px;
-        left: 5px;
-        pointer-events: none
-      }
+  .big_list{
+    padding: 0.5em 1em 3.5em 1em;
+    -webkit-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    transform: translateY(0%);
+  }
+  input, select, textarea {
+    max-width: 80%;
+    padding: 0px 10px;
+    font-size: 18px;
+  }
+  input {
+    height: 2.25em;
+    margin-bottom: 10px;
+  }
+  .cbutton{
+    font-size: 2em;
+  }
+  .shopping_list label::before {
+    border: 3px solid #fff;
+  }  
+  .shopping_list input[type="checkbox"], .shopping_list input[type="radio"] {
+    width: 30px;
+    height: 30px;
+  }
+  .shopping_list label {
+    padding: 10px 0 0 45px;
+  }
+  .shopping_list input[type="checkbox"], 
+  .shopping_list label::before {
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    margin-top: -10px;
+  }
+  .shopping_list svg {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    top: 50%;
+    margin-top: -6px;
+    left: 5px;
+    pointer-events: none
+  }
 }
-  @media screen and (max-width: 30em) {
+  
+@media screen and (max-width: 30em) {
 
-      svg {
-        width: 65%;
-        margin: 0 auto 0px;
-        display: block;
-        text-transform: uppercase;
-      }
-      h2 {
-        font: 300 1.5em/1.5'Open Sans', Helvetica;
-      }
-      h3 {
-        letter-spacing: 1em;
-      }
-      .big_list {
-        padding: 0.5em 1em 3.5em 1em;
-      }
+  svg {
+    width: 65%;
+    margin: 0 auto 0px;
+    display: block;
+    text-transform: uppercase;
+  }
+  h2 {
+    font: 300 1.5em/1.5'Open Sans', Helvetica;
+  }
+  h3 {
+    letter-spacing: 1em;
+  }
+  .big_list {
+    padding: 0.5em 1em 3.5em 1em;
+  }
 }
 
