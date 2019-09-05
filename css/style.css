@@ -41,6 +41,7 @@ input:focus {
 
 .container {
   margin: 15px;
+  height: 90vh;
 }
 
 .content {
@@ -108,6 +109,49 @@ h4.deleted_items {
   border-bottom-style: ridge;
   border-bottom: 2px solid #F5A503;
   padding: 10px 0px 10px 0px;
+}
+
+.search-bar {
+  text-align: left;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  bottom: 0px;
+  width: 100%;
+  position: fixed;
+  right: 0px;
+  background-color: #465b8c;
+}
+
+.col {
+  padding-left: 1rem;
+}
+
+.social {
+  float: right;
+}
+
+.social_bottom {
+  margin-left: 1rem;
+  padding: .75em 1em;
+}
+.social-icons a {
+  padding: 1.25rem 0.25rem;
+  color: #ccc;
+}
+li.social-icons {
+  display: inline-block;
+  font-size: 1.25em;
+}
+
+h4.info {
+    color: #ccc;
+}
+
+span {
+    color: white;
 }
 
 
@@ -471,7 +515,7 @@ svg {
 
 @media screen and (max-width: 640px) {
 	.container {
-    margin: 20px 30px;
+    margin: 40px 30px;
   }
   h2 {
     font: 300 1.75em/1.5'Open Sans', Helvetica;
@@ -537,13 +581,17 @@ svg {
     pointer-events: none
   }
   h4.deleted_items {
-      font-size: 1.5em;
-      padding: 0px;
-      line-height: 0em;
+    font-size: 1.5em;
+    padding: 0px;
+    line-height: 0em;
   }
 }
   
 @media screen and (max-width: 480px) {
+  .container {
+    margin: 30px;
+  }
+
   svg {
     width: 65%;
     margin: 0 auto 0px;
@@ -554,7 +602,7 @@ svg {
     font: 300 1.35em/1.5'Open Sans', Helvetica;
   }
   h3 {
-    letter-spacing: 1em;
+    letter-spacing: .75em;
   }
   h4.deleted_items {
       font-size: 2em;
@@ -630,5 +678,8 @@ svg {
     color: #fff;
     text-decoration: line-through;
     font-size: 2.75em;
+  }
+  .search-bar{
+    height: 50px;
   }
 }
