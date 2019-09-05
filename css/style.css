@@ -10,6 +10,8 @@ body {
   padding:0px;
   background: gold radial-gradient(gold, orangered);
   background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .input_field {
@@ -257,8 +259,8 @@ form.shopping_list {
 .shopping_list li.done label {
   display: inline-block;
   position: relative;
-  font-size: 1.5em;
-  padding: 0 0 0 65px;
+  font-size: 2.75em;
+  padding: 0 0 0 35px;
   vertical-align: top;
   color: rgba(0, 0, 0, 0.53);
   cursor: none;
@@ -340,7 +342,7 @@ form.shopping_list {
   bottom: 1.65em;
   color: #fff;
   content: attr(data-tooltip);
-  left: -5em;
+  right: -2em;
   padding: .3em .75em;
   position: absolute;
   text-shadow: 0 1px 0 #000;
@@ -357,9 +359,10 @@ form.shopping_list {
   bottom: 1em;
   content: "";
   display: block;
-  left: 3.55mm;
+  left: -2.25mm;
   position: absolute;
   z-index: 99;
+  bottom: 0mm;
 }
 
 /*Buttons*/
@@ -423,6 +426,10 @@ form.shopping_list {
   border: 2px solid rgba(111,148,182,0.5);
 }
 
+button.cbutton.cbutton--effect-jelena.right{
+    top: .25em;
+}
+
 .cbutton--effect-jelena.cbutton--click::after {
   -webkit-animation: anim-effect-jelena 0.3s ease-out forwards;
   animation: anim-effect-jelena 0.3s ease-out forwards;
@@ -455,16 +462,16 @@ form.shopping_list {
 }
 
 /* Media Queries */
-@media screen and (max-width: 70em) {
+@media screen and (max-width: 1120px) {
 
 svg {
     width: 50%;
     }
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 640px) {
 	.container {
-    margin: 40px;
+    margin: 20px 30px;
   }
   h2 {
     font: 300 1.75em/1.5'Open Sans', Helvetica;
@@ -477,7 +484,7 @@ svg {
 		font-size: 65%;
 	}
   .big_list{
-    padding: 0.5em 1em 3.5em 1em;
+    padding: 0.5em 2em 3.5em 2em;
     -webkit-transform: translateY(10%);
     -ms-transform: translateY(10%);
     transform: translateY(0%);
@@ -494,6 +501,10 @@ svg {
   .cbutton{
     font-size: 2em;
     top: .5em;
+  }
+
+  button.cbutton.cbutton--effect-jelena.right{
+    top: .25em;
   }
   button.cbutton.cb_add {
       top: 0;
@@ -525,9 +536,14 @@ svg {
     left: 5px;
     pointer-events: none
   }
+  h4.deleted_items {
+      font-size: 1.5em;
+      padding: 0px;
+      line-height: 0em;
+  }
 }
   
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 480px) {
   svg {
     width: 65%;
     margin: 0 auto 0px;
@@ -535,19 +551,84 @@ svg {
     text-transform: uppercase;
   }
   h2 {
-    font: 300 1.5em/1.5'Open Sans', Helvetica;
+    font: 300 1.35em/1.5'Open Sans', Helvetica;
   }
   h3 {
     letter-spacing: 1em;
   }
+  h4.deleted_items {
+      font-size: 2em;
+      padding: 0px;
+      line-height: 0em;
+  }
   .big_list {
-    padding: 0.5em 1em 3.5em 1em;
+    padding: 0.5em 2em 2em 2em;
+  }
+
+  h3 {
+    font: 400 1em/1 'Open Sans', Helvetica;
+  }
+  h4.deleted_items {
+    font-size: 1.25em;
+    padding: 0px;
+    line-height: 0em;
+    margin: 15px 0px;
+  }
+  .big_list {
+    max-width: 45em;
+  }
+  .shopping_list li {
+    margin: 0 auto;
+    padding: .5em 0;
+  }
+  .shopping_list label {
+    font-size: 1.5em;
+    padding: 5px 0 0 35px;
+  }
+  .shopping_list input[type="checkbox"], .shopping_list label::before {
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    margin-top: -10px;
+  }
+  .cbutton {
+      display: inline-block;
+      padding: 0;
+      font-size: 2em;
+      padding-top: 0px;
+  }
+  button.cbutton.cbutton--effect-jelena.right{
+      top: .25em;
+  }
+  input {
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    cursor: auto;
+    padding: 5px 10px;
+    border: 2px inset;
+    height: 1.75em;
+    color: steelblue;
+    font-size: 15px;
+    min-width: 1.5em;
+  }
+  .input_field {
+    position: relative;
+    padding: 0 0 10px 0px;
+  }
+  .content {
+      font: 800 15.5em/1 'Open Sans', Helvetica;
+  }
+  svg {
+      width: 60%;
+  }
+  .shopping_list li.done {
+    margin: 0 auto;
+    padding: 1mm 0;
+  }
+  .shopping_list input[type="checkbox"]:checked + label, .shopping_list input[type="radio"]:checked + label {
+    color: #fff;
+    text-decoration: line-through;
+    font-size: 2.75em;
   }
 }
-
-@media (min-width: 768px) {}
-
-@media (min-width: 992px) {}
-
-@media (min-width: 1200px) {}
-

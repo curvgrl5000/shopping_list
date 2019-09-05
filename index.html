@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
 		<title>Shopping List</title>
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="fonts/css/font-awesome.min.css" />
@@ -32,11 +34,11 @@
 				</div>
 				
 				<section class="going_shopping">
-					<h2>Add an item to create your shopping list</h2>	
+					<h2>Add an item to create your list</h2>	
 
 				 	<form class="shopping_list  ac-checkbox ac-cross" autocomplete="off">
 						<div class="input_field">
-							<input type="text" name="items" id="shopping_items" maxlength="15">
+							<input type="text" name="items" id="shopping_items" maxlength="15" placeholder="Add an item..."required />
 						 	<button class="cbutton cb_add"  type="submit"><i class="cbutton__icon fa fa-fw fa-plus"></i>
 						 		<span class="cbutton__text">ADD</span>
 							</button>
@@ -48,7 +50,7 @@
 						<div class="fancy_border">
 							<h4 class="deleted_items">Delete All Items Selected</h4>
 							<button class="cbutton cbutton--effect-jelena right" type="button" onclick="jRem('listed_items')">
-								<span class="tooltip" data-tooltip="kills, doesn't save!"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></span>
+								<span class="tooltip" data-tooltip="deletes all checked!"><i class="cbutton__icon fa fa-fw fa-trash-o"></i></span>
 							</button>
 						</div>
 						
